@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Nicolás Cubilla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #10151f;
+    --ink-soft: #3b4557;
+    --muted: #6d7688;
+    --rule: #d9dee6;
+    --accent: #0e7490;
+  }
+
+  body {
+    background: #6b7280;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    padding: 24px 12px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 9mm 12mm;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  }
+
+  /* ---------- Encabezado con foto ---------- */
+  header { display: flex; align-items: flex-start; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 9px; }
+  .who { flex: 1; min-width: 0; }
+  h1 { font-size: 21pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }
+  .role { margin-top: 3px; font-size: 10pt; font-weight: 600; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+  .contact { margin-top: 7px; font-size: 8.2pt; color: var(--ink-soft); line-height: 1.5; }
+  .contact a { color: var(--ink-soft); text-decoration: none; }
+  .contact .sep { color: var(--rule); margin: 0 5px; }
+  .photo { flex: 0 0 auto; width: 22mm; }
+  .photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; border: 1px solid var(--rule); border-radius: 2px; }
+
+  /* ---------- Secciones ---------- */
+  section { margin-top: 5px; break-inside: avoid; }
+  h2 {
+    font-size: 8.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
+    color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 1.5px; margin-bottom: 3px;
+  }
+
+  .summary { font-size: 8.3pt; line-height: 1.4; color: var(--ink-soft); }
+
+  /* ---------- Entradas ---------- */
+  .entry { break-inside: avoid; margin-bottom: 5px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .entry-title { font-size: 9.3pt; font-weight: 700; color: var(--ink); }
+  .entry-org { font-size: 8.3pt; color: var(--ink-soft); font-weight: 500; }
+  .entry-org b { font-weight: 700; color: var(--ink); }
+  .entry-org a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .entry-org .dates { color: var(--muted); font-style: italic; font-weight: 400; }
+
+  ul { margin-top: 3px; list-style: none; }
+  li { position: relative; padding-left: 11px; font-size: 8.1pt; line-height: 1.33; color: var(--ink-soft); margin-bottom: 1px; }
+  li::before { content: ''; position: absolute; left: 0; top: 4.5px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+  /* ---------- Conocimientos ---------- */
+  .skills { display: grid; grid-template-columns: 118px 1fr; gap: 2.5px 10px; }
+  .skills dt { font-size: 8.1pt; font-weight: 700; color: var(--ink); }
+  .skills dd { font-size: 8.1pt; line-height: 1.35; color: var(--ink-soft); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1.3fr; gap: 16px; }
+  .plain-list { font-size: 8.1pt; line-height: 1.4; color: var(--ink-soft); }
+  .plain-list b { color: var(--ink); font-weight: 700; }
+
+  /* ---------- Impresión ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { width: auto; min-height: 0; margin: 0; padding: 10mm 12mm; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="who">
+      <h1>Nicolás Cubilla</h1>
+      <p class="role">Desarrollador de Software</p>
+      <p class="contact">
+        Capiatá, Paraguay
+        <span class="sep">|</span>
+        (098) 456-4228
+        <span class="sep">|</span>
+        <a href="mailto:nicolascubillasosa2001@gmail.com">nicolascubillasosa2001@gmail.com</a>
+        <br>
+        <a href="https://www.linkedin.com/in/nicolas-cubilla-137765269">linkedin.com/in/nicolas-cubilla-137765269</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/nicolascubilla">github.com/nicolascubilla</a>
+      </p>
+    </div>
+    <div class="photo">
+      <img src="img/cv-foto.jpg" alt="Fotografía de Nicolás Cubilla" width="320" height="426">
+    </div>
+  </header>
+
+  <section>
+    <h2>Perfil profesional</h2>
+    <p class="summary">
+      Licenciado en Análisis de Sistemas Informáticos con experiencia desarrollando software para procesos de negocio en los
+      sectores financiero, asegurador y logístico. En Patrias Seguros (Banco Continental Paraguay) desarrollo y mantengo
+      aplicaciones en PHP y Delphi sobre Firebird 3.0, y construyo APIs y microservicios de automatización en Java con Spring
+      Boot. Experiencia previa en análisis, diseño y soporte de sistemas en UniNorte.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiencia laboral</h2>
+
+    <div class="entry">
+      <div class="entry-title">Desarrollador de Software</div>
+      <div class="entry-org"><b>Patrias Seguros</b> — Banco Continental Paraguay <span class="dates">13/05/2025 – actualidad · 1 año y 5 meses</span></div>
+      <ul>
+        <li>Desarrollo y mantenimiento de aplicaciones de negocio en PHP y Delphi.</li>
+        <li>Construcción de APIs y microservicios de automatización en Java con Spring Boot.</li>
+        <li>Diseño y ejecución de procesos de integración de datos con Pentaho ETL.</li>
+        <li>Consultas, procedimientos almacenados y optimización de consultas sobre Firebird 3.0.</li>
+        <li>Versionado de código con Git.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Desarrollador de Software Junior</div>
+      <div class="entry-org"><b>UniNorte</b> — Dirección de Tecnología <span class="dates">13/07/2023 – 05/2025 · 1 año y 10 meses</span></div>
+      <ul>
+        <li>Relevamiento de datos, análisis, diseño y desarrollo de sistemas establecidos por la dirección tecnológica.</li>
+        <li>Desarrollo de soluciones y mantenimiento evolutivo y correctivo de las opciones del sistema.</li>
+        <li>Brindé soporte técnico y capacitación a los usuarios del sistema.</li>
+        <li>Manejo de consultas y procedimientos almacenados en SQL sobre SQL Central.</li>
+        <li>Programación en PowerBuilder, C# .NET, PHP y Java.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Operario Logístico — Sector Pagoda</div>
+      <div class="entry-org"><b>Leoni Wiring System Py R.L.S</b></div>
+      <p class="plain-list" style="margin-top:3px">
+        Abastecimiento de circuito automotriz en el sector de logística, con escaneo de entrada y salida de piezas y control
+        de cortes para la preparación de pedidos.
+      </p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Proyectos</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AutoServiRL — Sistema POS de ventas</span>
+      </div>
+      <div class="entry-org">Laravel · PHP 8.3 · PostgreSQL — <a href="https://github.com/nicolascubilla/AutoServiRL-Laravel">github.com/nicolascubilla/AutoServiRL-Laravel</a></div>
+      <ul>
+        <li>Sistema de punto de venta con control de caja, inventario y stock mínimo, facturación electrónica, ticket e informes con exportación a CSV.</li>
+        <li>Importación masiva de productos desde Excel y gestión de usuarios, con 7 suites de pruebas PHPUnit incluida un flujo completo contra PostgreSQL real.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Sistema de gestión comercial</span>
+      </div>
+      <div class="entry-org">PHP · HTML5 · Bootstrap — <a href="https://github.com/nicolascubilla/lp3-taller-tesis">github.com/nicolascubilla/lp3-taller-tesis</a></div>
+      <ul>
+        <li>Aplicación web con control de acceso por roles y módulos de compra, producción y venta, con integración del inventario y trazabilidad de la operación.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Conocimientos técnicos</h2>
+    <dl class="skills">
+      <dt>Lenguajes</dt>
+      <dd>PHP, Java, C# .NET, Delphi, PowerBuilder, SQL, HTML5, JavaScript</dd>
+
+      <dt>Frameworks</dt>
+      <dd>Spring Boot, Laravel, Bootstrap, AdminLTE</dd>
+
+      <dt>Bases de datos</dt>
+      <dd>Firebird 3.0, PostgreSQL, SQL Central, modelado de datos, procedimientos almacenados</dd>
+
+      <dt>ETL</dt>
+      <dd>Pentaho ETL / Kettle, integración y automatización de procesos</dd>
+
+      <dt>Versionado</dt>
+      <dd>Git, GitHub</dd>
+
+      <dt>Prácticas</dt>
+      <dd>PHPUnit, pruebas automatizadas, arquitectura MVC, APIs REST, ofimática (Word, Excel, PowerPoint)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Formación</h2>
+    <p class="plain-list"><b>Licenciatura en Análisis de Sistemas Informáticos</b> — Título profesional. Universidad Tecnológica Intercontinental (UTIC), 2025.</p>
+  </section>
+
+  <section>
+    <h2>Idiomas y certificados</h2>
+    <div class="two-col">
+      <p class="plain-list">
+        <b>Castellano</b> — habla, lee y escribe. Fluido<br>
+        <b>Guaraní</b> — habla, lee y escribe. Fluido<br>
+        <b>Inglés</b> — básico
+      </p>
+      <p class="plain-list">
+        Operador Básico de Computadoras, fases 1 y 2 — Centro de Formación Profesional Globaled<br>
+        Diploma de Bachillerato en Ciencias Sociales — Colegio Nacional Carmen de Peña
+      </p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

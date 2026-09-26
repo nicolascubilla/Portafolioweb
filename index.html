@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nicolás Cubilla — Desarrollador de Software | PHP · Java · Spring Boot · Firebird</title>
+<meta name="description" content="Portafolio de Nicolás Cubilla, Licenciado en Análisis de Sistemas Informáticos y desarrollador de software en Patrias Seguros (Banco Continental Paraguay). Experiencia en PHP, Delphi, Java con Spring Boot, Pentaho ETL y Firebird 3.0.">
+<meta name="author" content="Nicolás Cubilla">
+<meta name="keywords" content="Nicolás Cubilla, desarrollador de software, PHP, Laravel, Java, Spring Boot, Delphi, Firebird 3.0, Pentaho ETL, PostgreSQL, desarrollador Paraguay, análisis de sistemas">
+<meta name="theme-color" content="#070b14">
+<link rel="canonical" href="https://nicolascubilla.github.io/portafolio_web/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PY">
+<meta property="og:url" content="https://nicolascubilla.github.io/portafolio_web/">
+<meta property="og:title" content="Nicolás Cubilla — Desarrollador de Software">
+<meta property="og:description" content="Lic. en Análisis de Sistemas Informáticos. Desarrollo en PHP, Delphi, Java Spring Boot, Pentaho ETL y Firebird 3.0 en el sector asegurador y financiero.">
+<meta property="og:image" content="https://nicolascubilla.github.io/portafolio_web/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23070b14'/><text x='50' y='68' font-size='52' font-family='Inter,sans-serif' font-weight='700' fill='%2322d3ee' text-anchor='middle'>NC</text></svg>">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        base: '#070b14',
+        surface: '#0d1424',
+        line: '#1c2941',
+        accent: '#22d3ee',
+        accent2: '#38bdf8',
+      },
+      boxShadow: {
+        glow: '0 0 0 1px rgba(34,211,238,.18), 0 18px 50px -18px rgba(34,211,238,.35)',
+      },
+      keyframes: {
+        blink: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0' } },
+        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+      },
+      animation: {
+        blink: 'blink 1.05s steps(1) infinite',
+        float: 'float 7s ease-in-out infinite',
+      },
+    },
+  },
+};
+</script>
+
+<style>
+  body { -webkit-font-smoothing: antialiased; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .grid-lines {
+    background-image: linear-gradient(rgba(34,211,238,.055) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(34,211,238,.055) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .navlink::after {
+    content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+    background: linear-gradient(90deg, #22d3ee, #38bdf8); transition: width .25s ease;
+  }
+  .navlink:hover::after, .navlink[aria-current="true"]::after { width: 100%; }
+  ::selection { background: rgba(34,211,238,.28); color: #e2e8f0; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body class="bg-base text-slate-200 font-sans antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-accent focus:text-base focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Ir al contenido</a>
+
+<!-- ============ NAV ============ -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="Navegación principal">
+    <a href="#inicio" class="flex items-center gap-3 group">
+      <span class="grid h-9 w-9 place-items-center rounded-lg border border-accent/30 bg-accent/10 font-bold text-accent transition group-hover:bg-accent group-hover:text-base">NC</span>
+      <span class="hidden sm:block text-sm font-semibold tracking-wide text-slate-100">Nicolás&nbsp;Cubilla</span>
+    </a>
+
+    <ul class="hidden items-center gap-7 lg:flex" id="desktop-menu">
+      <li><a href="#experiencia" class="navlink relative text-sm font-medium text-slate-300 transition hover:text-white">Experiencia</a></li>
+      <li><a href="#stack" class="navlink relative text-sm font-medium text-slate-300 transition hover:text-white">Stack</a></li>
+      <li><a href="#proyectos" class="navlink relative text-sm font-medium text-slate-300 transition hover:text-white">Proyectos</a></li>
+      <li><a href="#formacion" class="navlink relative text-sm font-medium text-slate-300 transition hover:text-white">Formación</a></li>
+      <li><a href="#contacto" class="navlink relative text-sm font-medium text-slate-300 transition hover:text-white">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="https://github.com/nicolascubilla" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hidden text-slate-400 transition hover:text-accent sm:block">
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+      </a>
+      <a href="CV-Nicolas-Cubilla.pdf" target="_blank" rel="noopener noreferrer" class="hidden rounded-lg border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent hover:text-base sm:block">CV</a>
+      <button id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="grid h-10 w-10 place-items-center rounded-lg border border-line text-slate-200 transition hover:border-accent/50 hover:text-accent lg:hidden">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <ul id="mobile-menu" class="hidden border-t border-line bg-base/95 backdrop-blur-lg lg:hidden">
+    <li><a href="#experiencia" class="block px-6 py-3.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-accent">Experiencia</a></li>
+    <li><a href="#stack" class="block px-6 py-3.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-accent">Stack tecnológico</a></li>
+    <li><a href="#proyectos" class="block px-6 py-3.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-accent">Proyectos</a></li>
+    <li><a href="#formacion" class="block px-6 py-3.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-accent">Formación</a></li>
+    <li><a href="#contacto" class="block px-6 py-3.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-accent">Contacto</a></li>
+    <li class="flex gap-3 border-t border-line px-6 py-4">
+      <a href="https://github.com/nicolascubilla" target="_blank" rel="noopener noreferrer" class="flex-1 rounded-lg border border-line py-2 text-center text-sm text-slate-300 transition hover:border-accent/50 hover:text-accent">GitHub</a>
+      <a href="CV-Nicolas-Cubilla.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 rounded-lg border border-accent/40 bg-accent/10 py-2 text-center text-sm font-semibold text-accent">Descargar CV</a>
+    </li>
+  </ul>
+</header>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section id="inicio" class="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20">
+  <img src="img/fondo_hero.jpg" alt="" aria-hidden="true" class="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-[.18] blur-2xl">
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-base/70 via-base/85 to-base"></div>
+  <div class="pointer-events-none absolute inset-0 grid-lines opacity-60"></div>
+  <div class="pointer-events-none absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-[110px]"></div>
+  <div class="pointer-events-none absolute -right-32 bottom-0 h-[26rem] w-[26rem] rounded-full bg-accent2/10 blur-[110px]"></div>
+
+  <div class="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.15fr_auto]">
+    <div>
+      <p class="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[.07] px-4 py-1.5 text-xs font-medium tracking-wide text-accent">
+        <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span></span>
+        Disponible para nuevas oportunidades
+      </p>
+
+      <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Nicolás Cubilla
+      </h1>
+
+      <p class="mt-3 flex min-h-[2rem] items-center text-lg font-medium text-accent sm:text-xl">
+        <span id="typewriter" aria-live="polite"></span><span class="ml-0.5 inline-block h-6 w-[3px] bg-accent animate-blink" aria-hidden="true"></span>
+      </p>
+
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
+        Licenciado en Análisis de Sistemas Informáticos y desarrollador de software con experiencia profesional en el sector
+        asegurador y financiero. Construyo APIs, microservicios de automatización y sistemas de gestión que resuelven
+        problemas reales de negocio.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#proyectos" class="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-base shadow-glow transition hover:bg-accent2">
+          Ver proyectos
+          <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="CV-Nicolas-Cubilla.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-accent/50 hover:text-white">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+          Descargar CV
+        </a>
+      </div>
+
+      <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-line pt-7">
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-500">Experiencia</dt>
+          <dd class="mt-1.5 text-2xl font-bold text-white">1 a 5 m</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-500">Stack</dt>
+          <dd class="mt-1.5 text-2xl font-bold text-white">17+</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-500">Base</dt>
+          <dd class="mt-1.5 text-2xl font-bold text-white">Paraguay</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Foto de perfil: encuadre superior para conservar solo el rostro -->
+    <div class="relative mx-auto w-56 shrink-0 sm:w-64 lg:w-72">
+      <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-accent/25 via-transparent to-accent2/20 blur-xl"></div>
+      <div class="relative overflow-hidden rounded-[1.75rem] border border-line bg-surface shadow-2xl animate-float">
+        <img src="img/perfil.jpg" alt="Retrato de Nicolás Cubilla, desarrollador de software" width="600" height="750" fetchpriority="high" class="h-full w-full object-cover object-top">
+      </div>
+      <div class="absolute -bottom-4 -left-4 rounded-xl border border-line bg-surface/95 px-4 py-2.5 backdrop-blur">
+        <p class="text-[10px] uppercase tracking-wider text-slate-500">Actualmente</p>
+        <p class="text-sm font-semibold text-white">Patrias Seguros</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section id="experiencia" class="scroll-mt-24 py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <header class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-[.18em] text-accent">Trayectoria</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Experiencia profesional</h2>
+      <p class="mt-4 text-slate-400">Desarrollo y mantenimiento de software para una aseguradora del grupo Banco Continental Paraguay.</p>
+    </header>
+
+    <div class="mt-12 space-y-6">
+      <article class="reveal overflow-hidden rounded-2xl border border-line bg-surface">
+        <div class="grid gap-px bg-line md:grid-cols-[minmax(0,17rem)_1fr]">
+          <div class="bg-surface p-7">
+            <p class="text-lg font-bold leading-tight text-white">Patrias Seguros</p>
+            <p class="mt-1 text-sm text-slate-400">Banco Continental Paraguay</p>
+            <p class="mt-5 inline-flex rounded-md border border-accent/25 bg-accent/[.08] px-2.5 py-1 font-mono text-xs text-accent">13/05/2025 — presente</p>
+            <p class="mt-3 text-sm text-slate-500">1 año y 5 meses</p>
+          </div>
+
+          <div class="bg-surface p-7 sm:p-8">
+            <h3 class="flex flex-wrap items-center gap-3 text-xl font-semibold text-white">
+              Desarrollador de Software
+              <span class="rounded-md bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">Tiempo completo</span>
+            </h3>
+
+            <ul class="mt-6 space-y-3.5">
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Desarrollo y mantenimiento de aplicaciones de negocio en <strong class="font-semibold text-slate-200">PHP</strong> y <strong class="font-semibold text-slate-200">Delphi</strong>.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Construcción de <strong class="font-semibold text-slate-200">APIs y microservicios de automatización</strong> en Java con <strong class="font-semibold text-slate-200">Spring Boot</strong>.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Diseño y ejecución de procesos de integración de datos con <strong class="font-semibold text-slate-200">Pentaho ETL</strong>.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Consultas, procedimientos y optimización sobre bases <strong class="font-semibold text-slate-200">Firebird 3.0</strong>.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Versionado y trabajo colaborativo con <strong class="font-semibold text-slate-200">Git</strong> y <strong class="font-semibold text-slate-200">GitHub</strong>.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal overflow-hidden rounded-2xl border border-line bg-surface">
+        <div class="grid gap-px bg-line md:grid-cols-[minmax(0,17rem)_1fr]">
+          <div class="bg-surface p-7">
+            <p class="text-lg font-bold leading-tight text-white">UniNorte</p>
+            <p class="mt-1 text-sm text-slate-400">Dirección de Tecnología</p>
+            <p class="mt-5 inline-flex rounded-md border border-line bg-base/60 px-2.5 py-1 font-mono text-xs text-slate-400">13/07/2023 — 05/2025</p>
+            <p class="mt-3 text-sm text-slate-500">1 año y 10 meses</p>
+          </div>
+
+          <div class="bg-surface p-7 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">Desarrollador de Software Junior</h3>
+
+            <ul class="mt-6 space-y-3.5">
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Relevamiento de datos, análisis, diseño y desarrollo de sistemas establecidos por la dirección tecnológica.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Desarrollo de soluciones y mantenimiento evolutivo y correctivo de las opciones del sistema.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Soporte técnico y capacitación a los usuarios del sistema.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Consultas y procedimientos almacenados en SQL sobre <strong class="font-semibold text-slate-200">SQL Central</strong>.</span>
+              </li>
+              <li class="flex gap-3 text-slate-400">
+                <svg class="mt-1 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Programación en <strong class="font-semibold text-slate-200">PowerBuilder</strong>, <strong class="font-semibold text-slate-200">C# .NET</strong>, PHP y Java.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section id="stack" class="scroll-mt-24 border-y border-line/60 bg-surface/40 py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <header class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-[.18em] text-accent">Tecnologías</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Stack tecnológico</h2>
+      <p class="mt-4 text-slate-400">Herramientas con las que trabajo día a día en desarrollo, datos e integración.</p>
+    </header>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">&lt;/&gt;</span> Lenguajes
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">PHP</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Java</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">C# .NET</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Delphi</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">PowerBuilder</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">SQL</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">HTML5</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">{ }</span> Frameworks
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Spring Boot</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Laravel <span class="text-xs text-slate-500">(básico)</span></li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Bootstrap 5</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">AdminLTE</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Vite</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">DB</span> Bases de datos
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Firebird 3.0</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">PostgreSQL</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">SQL Central</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Modelado de datos</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Optimización de consultas</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">ETL</span> Integración de datos
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Pentaho ETL / Kettle</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Carga y transformación de datos</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Automatización de procesos</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">git</span> Versionado
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Git</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">GitHub</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Ramas y pull requests</li>
+        </ul>
+      </div>
+
+      <div class="reveal rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/35">
+        <h3 class="flex items-center gap-2.5 font-semibold text-white">
+          <span class="grid h-8 w-8 place-items-center rounded-lg bg-accent/10 font-mono text-sm text-accent">✓</span> Prácticas y herramientas
+        </h3>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">PHPUnit</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Pruebas automatizadas</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">MVC</li>
+          <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">REST / APIs</li>
+          <li class="rounded-md border border-dashed border-accent/40 bg-accent/[.06] px-3 py-1.5 text-sm text-accent">
+            Python <span class="text-xs text-slate-500">(en formación)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos" class="scroll-mt-24 py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <header class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-[.18em] text-accent">Portafolio</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Proyectos</h2>
+      <p class="mt-4 text-slate-400">Sistemas completos que desarrollé de punta a punta, con código y pruebas.</p>
+    </header>
+
+    <div class="mt-12 space-y-8">
+      <!-- Proyecto destacado -->
+      <article class="reveal overflow-hidden rounded-2xl border border-line bg-surface transition hover:border-accent/35 hover:shadow-glow">
+        <div class="p-7 sm:p-9">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-accent">Proyecto principal</span>
+              <span class="rounded-md border border-line px-2.5 py-1 text-xs text-slate-400">Laravel</span>
+              <span class="rounded-md border border-line px-2.5 py-1 text-xs text-slate-400">PostgreSQL</span>
+              <span class="rounded-md border border-line px-2.5 py-1 text-xs text-slate-400">PHP 8.3</span>
+            </div>
+
+            <h3 class="mt-5 text-2xl font-bold text-white">AutoServiRL — Sistema POS de ventas</h3>
+            <p class="mt-4 leading-relaxed text-slate-400">
+              Sistema de punto de venta completo para una empresa de servicios, desarrollado en Laravel con arquitectura MVC
+              sobre <span class="text-slate-300">PostgreSQL</span>. Cubre el ciclo integral de la operación: venta en punto,
+              control de caja, inventario, facturación electrónica e informes.
+            </p>
+
+            <div class="mt-6 grid gap-2.5 text-sm text-slate-400 sm:grid-cols-2">
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> POS con búsqueda por código de barras y ticket</p>
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> Apertura, cierre e historial de caja</p>
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> Control de stock y stock mínimo</p>
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> Facturación electrónica e impresión</p>
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> Importación masiva de productos desde Excel</p>
+              <p class="flex gap-2.5"><span class="text-accent">&bull;</span> Informes con exportación a CSV</p>
+            </div>
+
+            <div class="mt-7 flex flex-wrap items-center gap-3">
+              <a href="https://github.com/nicolascubilla/AutoServiRL-Laravel" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent transition hover:bg-accent hover:text-base">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+                Ver código
+              </a>
+              <p class="text-sm text-slate-500">
+                <span class="font-semibold text-accent">7 suites de pruebas PHPUnit</span>, incluido un flujo completo contra PostgreSQL real
+              </p>
+            </div>
+        </div>
+
+        <figure class="border-t border-line bg-base/50 p-3 sm:p-4">
+          <img src="img/dashboard_autoservi.png" alt="Dashboard de AutoServiRL: menú lateral, paneles de resumen y cifras de ventas" width="1360" height="600" loading="lazy" class="w-full rounded-xl border border-line">
+          <figcaption class="mt-3 text-center text-xs text-slate-500">Dashboard del sistema — menú, paneles de resumen y ventas del día</figcaption>
+        </figure>
+      </article>
+
+      <!-- Proyecto 2 -->
+      <article class="reveal overflow-hidden rounded-2xl border border-line bg-surface transition hover:border-accent/35">
+        <figure class="border-b border-line bg-base/50 p-3 sm:p-4">
+          <img src="img/fondo_sistema.png" alt="Interfaz del sistema de gestión comercial con los módulos de compra, producción y venta" width="1357" height="642" loading="lazy" class="w-full rounded-xl border border-line">
+          <figcaption class="mt-3 text-center text-xs text-slate-500">Interfaz del sistema de gestión</figcaption>
+        </figure>
+        <div class="p-7 sm:p-9">
+          <span class="rounded-md border border-line px-2.5 py-1 text-xs text-slate-400">Desarrollo web</span>
+          <h3 class="mt-5 text-2xl font-bold text-white">Sistema de gestión comercial</h3>
+          <p class="mt-4 leading-relaxed text-slate-400">
+            Aplicación web con control de acceso por roles y tres módulos centrales de la operación:
+            <strong class="font-semibold text-slate-300">compra</strong>, <strong class="font-semibold text-slate-300">producción</strong> y
+            <strong class="font-semibold text-slate-300">venta</strong>. Cada módulo gestiona su registro, sus validaciones y su
+            integración con el inventario, manteniendo la información trazable de punta a punta.
+          </p>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Inicio de sesión</li>
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Compra</li>
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Producción</li>
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Venta</li>
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">HTML5</li>
+            <li class="rounded-md border border-line bg-base/60 px-3 py-1.5 text-sm text-slate-300">Bootstrap</li>
+          </ul>
+
+          <a href="https://github.com/nicolascubilla/lp3-taller-tesis" target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent transition hover:bg-accent hover:text-base">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            Ver código
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMACIÓN ============ -->
+<section id="formacion" class="scroll-mt-24 border-y border-line/60 bg-surface/40 py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <header class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-[.18em] text-accent">Base académica</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Formación</h2>
+    </header>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <article class="reveal rounded-2xl border border-line bg-surface p-7 sm:p-8">
+        <div class="flex items-start gap-5">
+          <span class="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-accent/10 text-2xl" aria-hidden="true">🎓</span>
+          <div>
+            <h3 class="text-xl font-bold text-white">Licenciatura en Análisis de Sistemas Informáticos</h3>
+            <p class="mt-1.5 text-sm text-slate-400">Egresado · Título profesional</p>
+            <p class="mt-5 leading-relaxed text-slate-400">
+              Formación en ingeniería de software, bases de datos, análisis y diseño de sistemas. Base conceptual que
+              sostiene mi trabajo diario en el desarrollo de soluciones de software.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl border border-line bg-surface p-7 sm:p-8">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-white">
+          <span class="grid h-9 w-9 place-items-center rounded-lg bg-accent/10 text-sm text-accent" aria-hidden="true">↗</span>
+          Actualización continua
+        </h3>
+        <ul class="mt-5 space-y-3 text-sm text-slate-400">
+          <li class="flex gap-2.5"><span class="text-accent">&bull;</span> Java y Spring Boot para APIs y microservicios</li>
+          <li class="flex gap-2.5"><span class="text-accent">&bull;</span> Laravel y desarrollo web moderno</li>
+          <li class="flex gap-2.5"><span class="text-accent">&bull;</span> Pentaho ETL e integración de datos</li>
+          <li class="flex gap-2.5"><span class="text-accent">&bull;</span> Pruebas automatizadas y control de versiones</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="scroll-mt-24 py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="reveal overflow-hidden rounded-2xl border border-line bg-surface">
+      <div class="grid gap-px bg-line lg:grid-cols-[1fr_1.15fr]">
+        <div class="bg-surface p-7 sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[.18em] text-accent">Contacto</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-white">Hablemos</h2>
+          <p class="mt-4 leading-relaxed text-slate-400">
+            Busco oportunidades como desarrollador de software, backend o integración de datos.
+            Escribime por el canal que prefieras — respondo rápido.
+          </p>
+          <p class="mt-7 inline-flex items-center gap-2 rounded-md border border-line bg-base/60 px-3 py-2 text-sm text-slate-300">
+            <span aria-hidden="true">📍</span> Paraguay
+          </p>
+        </div>
+
+        <ul class="grid gap-px bg-line sm:grid-cols-2">
+          <li class="bg-surface">
+            <a href="mailto:nicolascubillasosa2001@gmail.com" class="group flex h-full flex-col justify-center gap-2 p-7 transition hover:bg-white/[.03] sm:p-8">
+              <span class="text-xs uppercase tracking-wider text-slate-500">Correo</span>
+              <span class="break-all font-medium text-slate-200 transition group-hover:text-accent">nicolascubillasosa2001@gmail.com</span>
+            </a>
+          </li>
+          <li class="bg-surface">
+            <a href="https://wa.me/598984564228" target="_blank" rel="noopener noreferrer" class="group flex h-full flex-col justify-center gap-2 p-7 transition hover:bg-white/[.03] sm:p-8">
+              <span class="text-xs uppercase tracking-wider text-slate-500">WhatsApp</span>
+              <span class="font-medium text-slate-200 transition group-hover:text-accent">+595 984 564 228</span>
+            </a>
+          </li>
+          <li class="bg-surface">
+            <a href="https://www.linkedin.com/in/nicolas-cubilla-137765269" target="_blank" rel="noopener noreferrer" class="group flex h-full flex-col justify-center gap-2 p-7 transition hover:bg-white/[.03] sm:p-8">
+              <span class="text-xs uppercase tracking-wider text-slate-500">LinkedIn</span>
+              <span class="font-medium text-slate-200 transition group-hover:text-accent">/in/nicolas-cubilla</span>
+            </a>
+          </li>
+          <li class="bg-surface">
+            <a href="https://github.com/nicolascubilla" target="_blank" rel="noopener noreferrer" class="group flex h-full flex-col justify-center gap-2 p-7 transition hover:bg-white/[.03] sm:p-8">
+              <span class="text-xs uppercase tracking-wider text-slate-500">GitHub</span>
+              <span class="font-medium text-slate-200 transition group-hover:text-accent">/nicolascubilla</span>
+            </a>
+          </li>
+          <li class="bg-surface sm:col-span-2">
+            <a href="CV-Nicolas-Cubilla.pdf" target="_blank" rel="noopener noreferrer" class="group flex h-full items-center justify-between gap-4 p-7 transition hover:bg-white/[.03] sm:p-8">
+              <span class="font-medium text-slate-200 transition group-hover:text-accent">Descargar mi currículum (PDF)</span>
+              <svg class="h-5 w-5 shrink-0 text-slate-500 transition group-hover:translate-y-0.5 group-hover:text-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-line py-10">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 sm:flex-row">
+    <p class="text-sm text-slate-500">
+      © <span id="year">2026</span> Nicolás Cubilla — Desarrollador de software
+    </p>
+    <ul class="flex items-center gap-5">
+      <li><a href="https://www.linkedin.com/in/nicolas-cubilla-137765269" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-500 transition hover:text-accent"><img src="img/linkedin.png" alt="" width="20" height="20" class="h-5 w-5 opacity-70 hover:opacity-100"></a></li>
+      <li><a href="https://github.com/nicolascubilla" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-slate-500 transition hover:text-accent"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg></a></li>
+      <li><a href="https://www.instagram.com/cubilla616" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-500 transition hover:text-accent"><img src="img/instagram.png" alt="" width="20" height="20" class="h-5 w-5 opacity-70 hover:opacity-100"></a></li>
+      <li><a href="https://www.facebook.com/share/19iF7P4q6Y/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-slate-500 transition hover:text-accent"><img src="img/facebook.png" alt="" width="20" height="20" class="h-5 w-5 opacity-70 hover:opacity-100"></a></li>
+      <li><a href="https://wa.me/598984564228" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-slate-500 transition hover:text-accent"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24Zm-2.6 4.06c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.6.13.17 1.75 2.8 4.3 3.82 2.12.84 2.55.67 3.01.63.46-.04 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.55-.42h-.47Z"/></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Año del footer ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Menú móvil ---------- */
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Abrir menú');
+  }
+  menuBtn.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+  mobileMenu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) { closeMenu(); menuBtn.focus(); }
+  });
+
+  /* ---------- Nav: fondo al scrollear ---------- */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    if (window.scrollY > 24) {
+      nav.classList.add('bg-base/85', 'backdrop-blur-lg', 'border-line', 'shadow-lg');
+      nav.classList.remove('border-transparent');
+    } else {
+      nav.classList.remove('bg-base/85', 'backdrop-blur-lg', 'border-line', 'shadow-lg');
+      nav.classList.add('border-transparent');
+    }
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Máquina de escribir ---------- */
+  var roles = [
+    'Desarrollador de Software',
+    'Java · Spring Boot · APIs',
+    'Automatización con Pentaho ETL',
+    'PHP · Delphi · Firebird 3.0'
+  ];
+  var typeEl = document.getElementById('typewriter');
+
+  if (reduce) {
+    typeEl.textContent = roles[0];
+  } else {
+    var r = 0, c = 0, deleting = false;
+    (function tick() {
+      var word = roles[r];
+      typeEl.textContent = word.slice(0, c);
+      if (!deleting && c < word.length) { c++; setTimeout(tick, 95); }
+      else if (!deleting) { deleting = true; setTimeout(tick, 1900); }
+      else if (c > 0) { c--; setTimeout(tick, 45); }
+      else { deleting = false; r = (r + 1) % roles.length; setTimeout(tick, 320); }
+    })();
+  }
+
+  /* ---------- Animación de entrada ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        setTimeout(function () { el.classList.add('is-visible'); }, i * 90);
+        revealObs.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function (el) { revealObs.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Scroll-spy del navbar ---------- */
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#desktop-menu a'));
+
+  if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+    var spyObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          var isActive = a.getAttribute('href') === '#' + entry.target.id;
+          if (isActive) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { spyObs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# Binarios: no aplicar reglas de fin de línea
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pdf binary

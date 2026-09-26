@@ -2,7 +2,7 @@
 
 Desarrollador de Software. Licenciado en Análisis de Sistemas Informáticos.
 
-**Sitio publicado en:** https://nicolascubilla.github.io/portafolio_web/
+**Sitio publicado en:** https://nicolascubilla.github.io/Portafolioweb/
 
 ## Contenido
 

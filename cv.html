@@ -1,232 +1,427 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
 <title>CV — Nicolás Cubilla</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ink: #10151f;
-    --ink-soft: #3b4557;
-    --muted: #6d7688;
-    --rule: #d9dee6;
-    --accent: #0e7490;
+    --azul:      #0984e9;
+    --azul-osc:  #0668bd;
+    --azul-claro:#7fc0f5;
+    --tinta:     #1a2330;
+    --gris:      #4a5568;
+    --gris-claro:#7a879a;
+    --linea:     #dde3ea;
   }
 
-  body {
-    background: #6b7280;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    padding: 24px 12px;
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #e8eaed;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .page {
+  body { padding: 0; }
+
+  .pagina {
+    display: grid;
+    grid-template-columns: 64mm 1fr;
     width: 210mm;
     min-height: 297mm;
     margin: 0 auto;
-    padding: 9mm 12mm;
     background: #fff;
-    box-shadow: 0 10px 40px rgba(0,0,0,.35);
   }
 
-  /* ---------- Encabezado con foto ---------- */
-  header { display: flex; align-items: flex-start; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 9px; }
-  .who { flex: 1; min-width: 0; }
-  h1 { font-size: 21pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }
-  .role { margin-top: 3px; font-size: 10pt; font-weight: 600; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
-  .contact { margin-top: 7px; font-size: 8.2pt; color: var(--ink-soft); line-height: 1.5; }
-  .contact a { color: var(--ink-soft); text-decoration: none; }
-  .contact .sep { color: var(--rule); margin: 0 5px; }
-  .photo { flex: 0 0 auto; width: 22mm; }
-  .photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; border: 1px solid var(--rule); border-radius: 2px; }
+  /* ============ Columna lateral ============ */
+  .lateral {
+    background: var(--azul);
+    color: #fff;
+    padding: 10mm 8mm 8mm;
+    display: flex;
+    flex-direction: column;
+  }
 
-  /* ---------- Secciones ---------- */
-  section { margin-top: 5px; break-inside: avoid; }
+  .foto {
+    width: 25mm;
+    height: 25mm;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 1.1mm solid rgba(255, 255, 255, .32);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .nombre {
+    margin: 4.5mm 0 0;
+    font-size: 18pt;
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -.015em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .puesto {
+    margin: 2.5mm 0 0;
+    font-size: 8.8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: #dcecfb;
+  }
+
+  .titulo-acad {
+    margin: 2mm 0 0;
+    font-size: 7.8pt;
+    line-height: 1.4;
+    text-align: center;
+    color: #c3ddf7;
+  }
+
+  .regla {
+    height: .5mm;
+    background: rgba(255, 255, 255, .38);
+    margin: 6mm 0 5mm;
+  }
+
+  .bloque { margin-bottom: 5.5mm; }
+  .bloque:last-child { margin-bottom: 0; }
+
+  .btitulo {
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 2.6mm;
+  }
+
+  .dato {
+    display: flex;
+    gap: 2mm;
+    align-items: flex-start;
+    font-size: 8pt;
+    line-height: 1.38;
+    color: #eaf4fe;
+    margin-bottom: 1.5mm;
+    word-break: break-word;
+  }
+  .dato:last-child { margin-bottom: 0; }
+  .dato a { color: #fff; text-decoration: none; }
+  .dato svg { flex: 0 0 auto; margin-top: .4mm; opacity: .8; }
+
+  .perfil {
+    font-size: 8pt;
+    line-height: 1.45;
+    color: #e6f2fe;
+    margin: 0;
+  }
+
+  .idioma { margin-bottom: 2mm; }
+  .idioma:last-child { margin-bottom: 0; }
+  .idioma b { display: block; font-size: 8.2pt; font-weight: 700; }
+  .idioma span { font-size: 7.6pt; color: #c8e2fa; }
+
+  /* ============ Columna principal ============ */
+  .principal {
+    padding: 10mm 9mm 8mm 8mm;
+    color: var(--tinta);
+  }
+
+  section { margin-bottom: 3.6mm; break-inside: avoid; }
+  section:last-child { margin-bottom: 0; }
+
   h2 {
-    font-size: 8.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
-    color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 1.5px; margin-bottom: 3px;
+    font-size: 9.4pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--azul-osc);
+    margin: 0 0 2.8mm;
+    padding-bottom: 1.2mm;
+    border-bottom: .35mm solid var(--linea);
   }
 
-  .summary { font-size: 8.3pt; line-height: 1.4; color: var(--ink-soft); }
+  /* --- Entradas de experiencia --- */
+  .entrada { margin-bottom: 3mm; break-inside: avoid; }
+  .entrada:last-child { margin-bottom: 0; }
 
-  /* ---------- Entradas ---------- */
-  .entry { break-inside: avoid; margin-bottom: 5px; }
-  .entry:last-child { margin-bottom: 0; }
-  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-  .entry-title { font-size: 9.3pt; font-weight: 700; color: var(--ink); }
-  .entry-org { font-size: 8.3pt; color: var(--ink-soft); font-weight: 500; }
-  .entry-org b { font-weight: 700; color: var(--ink); }
-  .entry-org a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .entry-org .dates { color: var(--muted); font-style: italic; font-weight: 400; }
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+  }
 
-  ul { margin-top: 3px; list-style: none; }
-  li { position: relative; padding-left: 11px; font-size: 8.1pt; line-height: 1.33; color: var(--ink-soft); margin-bottom: 1px; }
-  li::before { content: ''; position: absolute; left: 0; top: 4.5px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+  .puesto-empresa { font-size: 9.4pt; font-weight: 700; color: var(--tinta); }
+  .puesto-empresa span { font-weight: 600; color: var(--gris); }
+  .fecha {
+    font-size: 7.4pt;
+    color: var(--gris-claro);
+    white-space: nowrap;
+    font-weight: 500;
+  }
 
-  /* ---------- Conocimientos ---------- */
-  .skills { display: grid; grid-template-columns: 118px 1fr; gap: 2.5px 10px; }
-  .skills dt { font-size: 8.1pt; font-weight: 700; color: var(--ink); }
-  .skills dd { font-size: 8.1pt; line-height: 1.35; color: var(--ink-soft); }
+  .detalle {
+    font-size: 8pt;
+    color: var(--gris);
+    margin: .6mm 0 1.4mm;
+  }
+  .detalle a { color: var(--azul-osc); text-decoration: none; font-weight: 600; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1.3fr; gap: 16px; }
-  .plain-list { font-size: 8.1pt; line-height: 1.4; color: var(--ink-soft); }
-  .plain-list b { color: var(--ink); font-weight: 700; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li {
+    position: relative;
+    padding-left: 3.4mm;
+    font-size: 8.1pt;
+    line-height: 1.4;
+    color: var(--gris);
+    margin-bottom: .55mm;
+    break-inside: avoid;
+  }
+  li:last-child { margin-bottom: 0; }
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.55mm;
+    width: 1.3mm;
+    height: 1.3mm;
+    border-radius: 50%;
+    background: var(--azul);
+  }
+  li b { color: var(--tinta); font-weight: 600; }
 
-  /* ---------- Impresión ---------- */
+  /* --- Conocimientos --- */
+  .conocimientos {
+    display: grid;
+    grid-template-columns: 26mm 1fr;
+    gap: 1.2mm 3mm;
+  }
+  .conocimientos dt {
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: var(--tinta);
+  }
+  .conocimientos dd {
+    font-size: 7.8pt;
+    line-height: 1.38;
+    color: var(--gris);
+    margin: 0;
+  }
+
+  .formacion-item { margin-bottom: 2.4mm; }
+  .formacion-item:last-child { margin-bottom: 0; }
+  .formacion-item b { font-size: 8.4pt; color: var(--tinta); }
+  .formacion-item span { font-size: 7.8pt; color: var(--gris-claro); }
+
+  /* ============ Impresión ============ */
   @page { size: A4; margin: 0; }
   @media print {
-    body { background: #fff; padding: 0; }
-    .page { width: auto; min-height: 0; margin: 0; padding: 10mm 12mm; box-shadow: none; }
+    html, body { background: #fff; }
+    .pagina { margin: 0; }
   }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="pagina">
 
-  <header>
-    <div class="who">
-      <h1>Nicolás Cubilla</h1>
-      <p class="role">Desarrollador de Software</p>
-      <p class="contact">
-        Capiatá, Paraguay
-        <span class="sep">|</span>
-        (098) 456-4228
-        <span class="sep">|</span>
+  <!-- ============ LATERAL ============ -->
+  <aside class="lateral">
+    <img class="foto" src="img/cv-foto.jpg" alt="Fotografía de Nicolás Cubilla" width="320" height="426">
+
+    <h1 class="nombre">Nicolás<br>Cubilla</h1>
+    <p class="puesto">Desarrollador de Software</p>
+    <p class="titulo-acad">Licenciado en Análisis de Sistemas Informáticos</p>
+
+    <div class="regla"></div>
+
+    <div class="bloque">
+      <h2 class="btitulo">Contacto</h2>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
         <a href="mailto:nicolascubillasosa2001@gmail.com">nicolascubillasosa2001@gmail.com</a>
-        <br>
-        <a href="https://www.linkedin.com/in/nicolas-cubilla-137765269">linkedin.com/in/nicolas-cubilla-137765269</a>
-        <span class="sep">|</span>
+      </div>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z"/></svg>
+        <a href="tel:+0984564228">(098) 456-4228</a>
+      </div>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0 1 12 4Zm-3.5 4c-.2 0-.4 0-.6.3-.2.2-.7.7-.7 1.6s.7 1.9.8 2c.1.2 1.4 2.2 3.4 3 .5.2.9.3 1.2.3.3 0 .6-.1.8-.4.2-.2.7-.7.7-1.4 0-.7-.5-1-.7-1.1l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4Z"/></svg>
+        <a href="https://wa.me/598984564228">WhatsApp</a>
+      </div>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+        <span>Capiatá, Paraguay</span>
+      </div>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM2 9h6v12H2V9Zm8 0h5.7v1.7h.1a6.2 6.2 0 0 1 5.6-3c3 0 5.6 1.9 5.6 5.6V21h-6v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21h-6V9Z"/></svg>
+        <a href="https://www.linkedin.com/in/nicolas-cubilla-137765269">linkedin.com/in/nicolas-cubilla</a>
+      </div>
+
+      <div class="dato">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .21.15.46.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
         <a href="https://github.com/nicolascubilla">github.com/nicolascubilla</a>
-      </p>
-    </div>
-    <div class="photo">
-      <img src="img/cv-foto.jpg" alt="Fotografía de Nicolás Cubilla" width="320" height="426">
-    </div>
-  </header>
-
-  <section>
-    <h2>Perfil profesional</h2>
-    <p class="summary">
-      Licenciado en Análisis de Sistemas Informáticos con experiencia desarrollando software para procesos de negocio en los
-      sectores financiero, asegurador y logístico. En Patrias Seguros (Banco Continental Paraguay) desarrollo y mantengo
-      aplicaciones en PHP y Delphi sobre Firebird 3.0, y construyo APIs y microservicios de automatización en Java con Spring
-      Boot. Experiencia previa en análisis, diseño y soporte de sistemas en UniNorte.
-    </p>
-  </section>
-
-  <section>
-    <h2>Experiencia laboral</h2>
-
-    <div class="entry">
-      <div class="entry-title">Desarrollador de Software</div>
-      <div class="entry-org"><b>Patrias Seguros</b> — Banco Continental Paraguay <span class="dates">13/05/2025 – actualidad · 1 año y 5 meses</span></div>
-      <ul>
-        <li>Desarrollo y mantenimiento de aplicaciones de negocio en PHP y Delphi.</li>
-        <li>Construcción de APIs y microservicios de automatización en Java con Spring Boot.</li>
-        <li>Diseño y ejecución de procesos de integración de datos con Pentaho ETL.</li>
-        <li>Consultas, procedimientos almacenados y optimización de consultas sobre Firebird 3.0.</li>
-        <li>Versionado de código con Git.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Desarrollador de Software Junior</div>
-      <div class="entry-org"><b>UniNorte</b> — Dirección de Tecnología <span class="dates">13/07/2023 – 05/2025 · 1 año y 10 meses</span></div>
-      <ul>
-        <li>Relevamiento de datos, análisis, diseño y desarrollo de sistemas establecidos por la dirección tecnológica.</li>
-        <li>Desarrollo de soluciones y mantenimiento evolutivo y correctivo de las opciones del sistema.</li>
-        <li>Brindé soporte técnico y capacitación a los usuarios del sistema.</li>
-        <li>Manejo de consultas y procedimientos almacenados en SQL sobre SQL Central.</li>
-        <li>Programación en PowerBuilder, C# .NET, PHP y Java.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Operario Logístico — Sector Pagoda</div>
-      <div class="entry-org"><b>Leoni Wiring System Py R.L.S</b></div>
-      <p class="plain-list" style="margin-top:3px">
-        Abastecimiento de circuito automotriz en el sector de logística, con escaneo de entrada y salida de piezas y control
-        de cortes para la preparación de pedidos.
-      </p>
-    </div>
-
-  </section>
-
-  <section>
-    <h2>Proyectos</h2>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">AutoServiRL — Sistema POS de ventas</span>
       </div>
-      <div class="entry-org">Laravel · PHP 8.3 · PostgreSQL — <a href="https://github.com/nicolascubilla/AutoServiRL-Laravel">github.com/nicolascubilla/AutoServiRL-Laravel</a></div>
-      <ul>
-        <li>Sistema de punto de venta con control de caja, inventario y stock mínimo, facturación electrónica, ticket e informes con exportación a CSV.</li>
-        <li>Importación masiva de productos desde Excel y gestión de usuarios, con 7 suites de pruebas PHPUnit incluida un flujo completo contra PostgreSQL real.</li>
-      </ul>
     </div>
 
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Sistema de gestión comercial</span>
+    <div class="regla"></div>
+
+    <div class="bloque">
+      <h2 class="btitulo">Perfil</h2>
+      <p class="perfil">
+        Desarrollo y mantengo software para procesos de negocio en el sector asegurador
+        y financiero. Trabajo con PHP y Delphi sobre Firebird 3.0, y construyo APIs y
+        microservicios de automatización en Java con Spring Boot. Me enfoco en resolver
+        problemas reales de negocio con datos confiables.
+      </p>
+    </div>
+
+    <div class="regla"></div>
+
+    <div class="bloque">
+      <h2 class="btitulo">Idiomas</h2>
+      <div class="idioma">
+        <b>Castellano</b>
+        <span>Nativo</span>
       </div>
-      <div class="entry-org">PHP · HTML5 · Bootstrap — <a href="https://github.com/nicolascubilla/lp3-taller-tesis">github.com/nicolascubilla/lp3-taller-tesis</a></div>
-      <ul>
-        <li>Aplicación web con control de acceso por roles y módulos de compra, producción y venta, con integración del inventario y trazabilidad de la operación.</li>
-      </ul>
+      <div class="idioma">
+        <b>Guaraní</b>
+        <span>Nativo</span>
+      </div>
+      <div class="idioma">
+        <b>Inglés</b>
+        <span>Básico</span>
+      </div>
     </div>
+  </aside>
 
-  </section>
+  <!-- ============ PRINCIPAL ============ -->
+  <main class="principal">
 
-  <section>
-    <h2>Conocimientos técnicos</h2>
-    <dl class="skills">
-      <dt>Lenguajes</dt>
-      <dd>PHP, Java, C# .NET, Delphi, PowerBuilder, SQL, HTML5, JavaScript</dd>
+    <section>
+      <h2>Experiencia laboral</h2>
 
-      <dt>Frameworks</dt>
-      <dd>Spring Boot, Laravel, Bootstrap, AdminLTE</dd>
+      <div class="entrada">
+        <div class="fila">
+          <div class="puesto-empresa">Desarrollador de Software <span>· Patrias Seguros</span></div>
+          <div class="fecha">13/05/2025 – actualidad · 1 año 5 meses</div>
+        </div>
+        <p class="detalle">Banco Continental Paraguay</p>
+        <ul>
+          <li>Desarrollo y mantenimiento de aplicaciones de negocio en <b>PHP</b> y <b>Delphi</b>.</li>
+          <li>Construcción de APIs y microservicios de automatización en <b>Java</b> con <b>Spring Boot</b>.</li>
+          <li>Diseño y ejecución de procesos de integración de datos con <b>Pentaho ETL</b>.</li>
+          <li>Consultas, procedimientos almacenados y optimización sobre <b>Firebird 3.0</b>.</li>
+          <li>Versionado de código con <b>Git</b>.</li>
+        </ul>
+      </div>
 
-      <dt>Bases de datos</dt>
-      <dd>Firebird 3.0, PostgreSQL, SQL Central, modelado de datos, procedimientos almacenados</dd>
+      <div class="entrada">
+        <div class="fila">
+          <div class="puesto-empresa">Desarrollador de Software Junior <span>· UniNorte</span></div>
+          <div class="fecha">13/07/2023 – 05/2025 · 1 año 10 meses</div>
+        </div>
+        <p class="detalle">Dirección de Tecnología</p>
+        <ul>
+          <li>Relevamiento de datos, análisis, diseño y desarrollo de sistemas establecidos por la dirección.</li>
+          <li>Desarrollo de soluciones y mantenimiento evolutivo y correctivo de las opciones del sistema.</li>
+          <li>Soporte técnico y capacitación a los usuarios.</li>
+          <li>Manejo de consultas y procedimientos almacenados en <b>SQL</b> sobre <b>SQL Central</b>.</li>
+          <li>Programación en <b>PowerBuilder</b>, <b>C# .NET</b>, <b>PHP</b> y <b>Java</b>.</li>
+        </ul>
+      </div>
 
-      <dt>ETL</dt>
-      <dd>Pentaho ETL / Kettle, integración y automatización de procesos</dd>
+      <div class="entrada">
+        <div class="fila">
+          <div class="puesto-empresa">Operario Logístico <span>· Leoni Wiring System Py R.L.S</span></div>
+        </div>
+        <p class="detalle">Sector Pagoda</p>
+        <ul>
+          <li>Abastecimiento de circuito automotriz, con escaneo de entrada y salida de piezas y control de cortes para la preparación de pedidos.</li>
+        </ul>
+      </div>
+    </section>
 
-      <dt>Versionado</dt>
-      <dd>Git, GitHub</dd>
+    <section>
+      <h2>Proyectos</h2>
 
-      <dt>Prácticas</dt>
-      <dd>PHPUnit, pruebas automatizadas, arquitectura MVC, APIs REST, ofimática (Word, Excel, PowerPoint)</dd>
-    </dl>
-  </section>
+      <div class="entrada">
+        <div class="fila">
+          <div class="puesto-empresa">AutoServiRL <span>· Sistema POS de ventas</span></div>
+          <div class="fecha"><a href="https://github.com/nicolascubilla/AutoServiRL-Laravel" style="color:inherit;text-decoration:none">github.com/…/AutoServiRL</a></div>
+        </div>
+        <p class="detalle">Laravel · PHP 8.3 · PostgreSQL</p>
+        <ul>
+          <li>Sistema de punto de venta completo: caja, inventario con stock mínimo, facturación electrónica, ticket e informes con exportación a CSV.</li>
+          <li>Importación masiva de productos desde Excel y gestión de usuarios, con 7 suites de pruebas PHPUnit incluida un flujo completo contra PostgreSQL real.</li>
+        </ul>
+      </div>
 
-  <section>
-    <h2>Formación</h2>
-    <p class="plain-list"><b>Licenciatura en Análisis de Sistemas Informáticos</b> — Título profesional. Universidad Tecnológica Intercontinental (UTIC), 2025.</p>
-  </section>
+      <div class="entrada">
+        <div class="fila">
+          <div class="puesto-empresa">Sistema de gestión comercial</div>
+          <div class="fecha"><a href="https://github.com/nicolascubilla/lp3-taller-tesis" style="color:inherit;text-decoration:none">github.com/…/lp3-taller-tesis</a></div>
+        </div>
+        <p class="detalle">PHP · HTML5 · Bootstrap</p>
+        <ul>
+          <li>Aplicación web con control de acceso por roles y módulos de compra, producción y venta, con integración del inventario y trazabilidad de punta a punta.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Idiomas y certificados</h2>
-    <div class="two-col">
-      <p class="plain-list">
-        <b>Castellano</b> — habla, lee y escribe. Fluido<br>
-        <b>Guaraní</b> — habla, lee y escribe. Fluido<br>
-        <b>Inglés</b> — básico
-      </p>
-      <p class="plain-list">
-        Operador Básico de Computadoras, fases 1 y 2 — Centro de Formación Profesional Globaled<br>
-        Diploma de Bachillerato en Ciencias Sociales — Colegio Nacional Carmen de Peña
-      </p>
-    </div>
-  </section>
+    <section>
+      <h2>Conocimientos técnicos</h2>
+      <dl class="conocimientos">
+        <dt>Lenguajes</dt>
+        <dd>PHP, Java, Delphi, C# .NET, PowerBuilder, SQL, JavaScript, HTML5</dd>
 
+        <dt>Bases de datos</dt>
+        <dd>Firebird 3.0, PostgreSQL, SQL Central, modelado de datos y optimización de consultas</dd>
+
+        <dt>ETL y automatización</dt>
+        <dd>Pentaho ETL, integración y transformación de datos, procesos automatizados</dd>
+
+        <dt>Frameworks y herramientas</dt>
+        <dd>Laravel, Spring Boot, Bootstrap, AdminLTE, PHPUnit, Docker</dd>
+
+        <dt>Versionado</dt>
+        <dd>Git</dd>
+
+        <dt>En formación</dt>
+        <dd>Python</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Formación</h2>
+      <div class="formacion-item">
+        <b>Licenciatura en Análisis de Sistemas Informáticos</b><br>
+        <span>Universidad Tecnológica Intercontinental (UTIC) — 2025</span>
+      </div>
+      <div class="formacion-item">
+        <b>Bachillerato en Ciencias Sociales</b><br>
+        <span>Colegio Nacional Carmen de Peña</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certificados y cursos</h2>
+      <div class="formacion-item">
+        <b>Operador Básico de Computadoras — fases 1 y 2</b><br>
+        <span>Centro de Formación Profesional Globaled — 2010</span>
+      </div>
+    </section>
+
+  </main>
 </div>
 </body>
 </html>
